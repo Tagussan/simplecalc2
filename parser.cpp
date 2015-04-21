@@ -204,6 +204,10 @@ public:
                     opS.pop();
                     pt++;
                 }
+                if(inputEnd){
+                    cout << "parse error" << endl;
+                    return 0;
+                }
                 break;
             default:
                 break;
@@ -220,5 +224,6 @@ int main(){
     while(cin >> input){
         cout << psr.evaluate(input) << endl;
     }
+    //cout << psr.evaluate("(1+2") << endl;
     return 0;
 }
