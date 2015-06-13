@@ -50,10 +50,10 @@ public:
     double number(string& s, int& p){
         int length = 0;
         double val;
-        while (p + length < s.size() && '0' <= input[p + length] && input[p + length] <= '9'){
+        while (p + length < s.size() && (('0' <= input[p + length] && input[p + length] <= '9') || input[p + length] == '.')){
             length++;
         }
-        val = (double)stoi(input.substr(p, length));
+        val = (double)stod(input.substr(p, length));
         p += length;
         return val;
     }
